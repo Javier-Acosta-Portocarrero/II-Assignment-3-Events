@@ -80,9 +80,9 @@ Además, añadí un segundo texto al Canvas para mostrar las recompensas acumula
 
 En este ejercicio amplié la escena de los ejercicios anteriores para crear un entorno más completo y con una ambientación acorde al prototipo.
 
-Para ello, añadí montañas y colinas alrededor de la zona de juego, además de aplicar diferentes texturas de césped y roca para mejorar el aspecto del escenario. También incorporé elementos decorativos de madera y distribuí los escudos por diferentes zonas.
+Para ello, añadí montañas y colinas alrededor de la zona de juego, además de aplicar diferentes texturas de césped y madera para mejorar el aspecto del escenario.
 
-En esta escena mantuve los prefabs de humanoides de los distintos grupos y reutilicé las mecánicas de recolección, puntuación y recompensas de los ejercicios anteriores. De esta manera conseguí integrar las funcionalidades desarrolladas en un escenario más elaborado.
+En esta escena mantuve los prefabs de humanoides de los distintos grupos y de los escudos, y reutilicé las mecánicas de recolección, puntuación y recompensas de los ejercicios anteriores. De esta manera conseguí integrar las funcionalidades desarrolladas en un escenario más elaborado. Añadí más escudos y soldados en el escenario para mejorar la ambientación.
 
 ![Ejercicio 8](./gifs-readme/ejercicio8.gif)
 
@@ -92,6 +92,6 @@ En este último ejercicio adapté la mecánica del ejercicio 3 para que el jugad
 
 Para ello, modifiqué la configuración del Rigidbody del prefab del jugador, desactivando `Is Kinematic` y activando la gravedad. También cambié el sistema de movimiento para utilizar `Rigidbody.linearVelocity` en lugar de `MovePosition`, conservando la velocidad vertical para permitir que la gravedad siguiera actuando.
 
-Se reutilizaron los eventos y las colisiones del ejercicio 3, de forma que los humanoides siguen reaccionando dependiendo del grupo con el que colisiona el jugador y cambian de color al chocar contra los escudos físicos de tipo 2. También configuré las restricciones de rotación para evitar que el jugador volcara durante el movimiento.
+He seguido usando los eventos y las colisiones del ejercicio 3, de forma que los humanoides siguen reaccionando dependiendo del grupo con el que colisiona el jugador y cambian de color al chocar contra los escudos físicos de tipo 2. También configuré las restricciones de rotación para evitar que el jugador volcara durante el movimiento.
 
 ![Ejercicio 9](./gifs-readme/ejercicio9.gif)
