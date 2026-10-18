@@ -11,7 +11,7 @@ En este primer ejercicio creé una escena con cinco esferas, tres rojas de tipo 
 
 Para implementarlo utilicé el patrón observador, haciendo que el cilindro lanzara un evento mediante `OnCollisionEnter` al que las esferas estaban suscritas. Las de tipo 1 se dirigen hacia una esfera verde seleccionada, mientras que las de tipo 2 se mueven hacia el cilindro. Para el movimiento utilicé la velocidad de los Rigidbody y Tags para identificar los diferentes objetos.
 
-![Ejercicio 1](./gifs-readme4/ejercicio1.gif)
+![Ejercicio 1](./gifs-readme/ejercicio1.gif)
 
 ## Ejercicio 2
 
@@ -21,7 +21,7 @@ Durante la configuración tuve algunos problemas con las físicas, ya que los pe
 
 Por último, creé materiales para aplicar las texturas a los personajes y mantuve las animaciones originales incluidas en los prefabs, que se reproducen desde el componente Animator.
 
-![Ejercicio 2](./gifs-readme4/ejercicio2.gif)
+![Ejercicio 2](./gifs-readme/ejercicio2.gif)
 
 ## Ejercicio 3
 
@@ -31,7 +31,7 @@ Cuando colisiona con uno de tipo 2, los humanoides del grupo 1 se desplazan haci
 
 También implementé que los humanoides cambien de color al colisionar con un escudo de tipo 2. Para ello tuve que acceder a los Renderer de los objetos hijos de los prefabs, ya que sus Meshes no estaban directamente en el objeto principal.
 
-![Ejercicio 3](./gifs-readme4/ejercicio3.gif)
+![Ejercicio 3](./gifs-readme/ejercicio3.gif)
 
 ## Ejercicio 4
 
@@ -41,7 +41,7 @@ Al recibir el evento, los humanoides del grupo 1 se teletransportan hacia un esc
 
 Inicialmente, los tres humanoides aparecían en el mismo punto al teletransportarse, provocando que se superpusieran. Para solucionarlo, modifiqué el atributo `teleportOffset` desde el Inspector, asignando los valores -2, 0 y 2 al eje X de los diferentes personajes.
 
-![Ejercicio 4](./gifs-readme4/ejercicio4.gif)
+![Ejercicio 4](./gifs-readme/ejercicio4.gif)
 
 ## Ejercicio 5
 
@@ -51,7 +51,7 @@ Para ello, creé el script `FifthExerciseShieldCollector`, que utiliza `OnCollis
 
 También añadí un método `GetScore` para poder consultar la puntuación desde otros scripts en los siguientes ejercicios.
 
-![Ejercicio 5](./gifs-readme4/ejercicio5.gif)
+![Ejercicio 5](./gifs-readme/ejercicio5.gif)
 
 ## Ejercicio 6
 
@@ -61,7 +61,7 @@ Para ello, creé un Canvas con un componente Legacy Text y utilicé el script `S
 
 También configuré el Rect Transform para situar el texto en la esquina superior izquierda, utilizando los Anchors y una posición de (120, -40). Finalmente, establecí un tamaño de fuente de 25 y un color verde claro para que la puntuación destacara sobre el escenario.
 
-![Ejercicio 6](./gifs-readme4/ejercicio6.gif)
+![Ejercicio 6](./gifs-readme/ejercicio6.gif)
 
 ## Ejercicio 7
 
@@ -71,7 +71,7 @@ Para implementarlo, creé el script `SeventhExerciseRewardUI`, que accede al com
 
 Además, añadí un segundo texto al Canvas para mostrar las recompensas acumuladas, manteniendo también el texto de puntuación del ejercicio anterior.
 
-![Ejercicio 7](./gifs-readme4/ejercicio8.gif)
+![Ejercicio 7](./gifs-readme/ejercicio8.gif)
 
 
 \(perdí el vídeo de este ejercicio sin tener la escena del ejercicio 8)
@@ -84,7 +84,7 @@ Para ello, añadí montañas y colinas alrededor de la zona de juego, además de
 
 En esta escena mantuve los prefabs de humanoides de los distintos grupos y reutilicé las mecánicas de recolección, puntuación y recompensas de los ejercicios anteriores. De esta manera conseguí integrar las funcionalidades desarrolladas en un escenario más elaborado.
 
-![Ejercicio 8](./gifs-readme4/ejercicio8.gif)
+![Ejercicio 8](./gifs-readme/ejercicio8.gif)
 
 ## Ejercicio 9
 
@@ -94,4 +94,4 @@ Para ello, modifiqué la configuración del Rigidbody del prefab del jugador, de
 
 Se reutilizaron los eventos y las colisiones del ejercicio 3, de forma que los humanoides siguen reaccionando dependiendo del grupo con el que colisiona el jugador y cambian de color al chocar contra los escudos físicos de tipo 2. También configuré las restricciones de rotación para evitar que el jugador volcara durante el movimiento.
 
-![Ejercicio 9](./gifs-readme4/ejercicio9.gif)
+![Ejercicio 9](./gifs-readme/ejercicio9.gif)
