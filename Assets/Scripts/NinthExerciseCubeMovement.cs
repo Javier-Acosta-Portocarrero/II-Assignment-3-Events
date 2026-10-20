@@ -29,7 +29,6 @@ public class NinthExerciseCubeMovement : MonoBehaviour
     private void MovePlayer()
     {
         Vector3 movement = new Vector3(horizontal, 0, vertical);
-
-        rb.linearVelocity = new Vector3(movement.normalized.x * speed, rb.linearVelocity.y, movement.normalized.z * speed);
+        rb.AddForce(movement.normalized * force, ForceMode.Acceleration);
     }
 }

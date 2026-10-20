@@ -80,8 +80,8 @@ public class ThirdExerciseHumanoidObserver : MonoBehaviour
                 characterRenderer.material.color = Color.yellow;
             }
             target = null;
-            rb.velocity = new Vector3(0, rb.velocity.y, 0);
-            Debug.Log(gameObject.name + " changed color");
+            rb.AddForce(direction.normalized * force, ForceMode.Acceleration);
+            //Debug.Log(gameObject.name + " changed color");
         }
     }
 }

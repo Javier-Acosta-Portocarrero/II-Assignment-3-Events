@@ -25,8 +25,7 @@ public class ThirdExerciseCubeNotifier : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(type1Tag))
         {
-            Debug.Log("The cube collided with a Type1 humanoid");
-
+            //Debug.Log("The cube collided with a Type1 humanoid");
             if (OnType1Collision != null)
             {
                 OnType1Collision();
@@ -34,8 +33,7 @@ public class ThirdExerciseCubeNotifier : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag(type2Tag))
         {
-            Debug.Log("The cube collided with a Type2 humanoid");
-
+            //Debug.Log("The cube collided with a Type2 humanoid");
             if (OnType2Collision != null)
             {
                 OnType2Collision();

@@ -49,11 +49,7 @@ public class FirstExerciseSphereObserver : MonoBehaviour
         direction.y = 0;
         if (direction.magnitude > stoppingDistance)
         {
-            rb.velocity = direction.normalized * speed;
-        }
-        else
-        {
-            rb.velocity = Vector3.zero;
+            rb.AddForce(direction.normalized * force, ForceMode.Acceleration);
         }
     }
 }
