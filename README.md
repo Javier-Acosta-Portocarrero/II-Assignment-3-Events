@@ -3,13 +3,13 @@
 
 Autor: Javier Acosta Portocarrero
 
-En esta práctica he aprendido a utilizar el patrón observador en Unity mediante delegados y eventos, permitiendo que diferentes objetos reaccionen a determinadas acciones. También he trabajado con colisiones físicas, movimiento mediante Rigidbody, teletransporte, orientación de personajes y sistemas de puntuación e interfaz.
+En esta práctica he aprendido a utilizar el patrón observador en Unity mediante delegados y eventos, permitiendo que diferentes objetos reaccionen a determinadas acciones. También he trabajado con colisiones físicas, movimiento mediante Rigidbody y fuerzas, teletransporte, orientación de personajes y sistemas de puntuación e interfaz.
 
 ## Ejercicio 1
 
 En este primer ejercicio creé una escena con cinco esferas, tres rojas de tipo 1 y dos verdes de tipo 2, además de un cubo y un cilindro. El objetivo era conseguir que, cuando el cubo colisionara con el cilindro, las esferas reaccionaran de manera diferente según su grupo.
 
-Para implementarlo utilicé el patrón observador, haciendo que el cilindro lanzara un evento mediante `OnCollisionEnter` al que las esferas estaban suscritas. Las de tipo 1 se dirigen hacia una esfera verde seleccionada, mientras que las de tipo 2 se mueven hacia el cilindro. Para el movimiento utilicé la velocidad de los Rigidbody y Tags para identificar los diferentes objetos.
+Para implementarlo utilicé el patrón observador, haciendo que el cilindro lanzara un evento mediante `OnCollisionEnter` al que las esferas estaban suscritas. Las de tipo 1 se dirigen hacia una esfera verde seleccionada (de tipo 2), mientras que las de tipo 2 se mueven hacia el cilindro. Para el movimiento utilicé `Rigidbody.AddForce` con `ForceMode.Acceleration`, aplicando fuerzas en dirección a los objetivos y estableciendo una distancia de parada. También utilicé Tags para identificar los diferentes objetos.
 
 ![Ejercicio 1](./gifs-readme/ejercicio1.gif)
 
@@ -17,7 +17,7 @@ Para implementarlo utilicé el patrón observador, haciendo que el cilindro lanz
 
 En este ejercicio sustituí los objetos geométricos del ejercicio anterior por prefabs de humanoides, manteniendo el funcionamiento de los eventos y el movimiento de los diferentes grupos. También sustituí el cubo original por un prefab para representar al jugador.
 
-Durante la configuración tuve algunos problemas con las físicas, ya que los personajes atravesaban el suelo o no se movían correctamente. Para solucionarlo, añadí los componentes Rigidbody y Collider al GameObject principal de los prefabs y ajusté los Colliders a sus dimensiones. También bloqueé las rotaciones de los ejes X y Z para evitar que los personajes volcaran al moverse.
+Durante la configuración tuve algunos problemas con las físicas, ya que los personajes atravesaban el suelo o no se movían correctamente. Para solucionarlo, añadí los componentes Rigidbody y Collider al GameObject principal de los prefabs y ajusté los Colliders tipo capsula a sus dimensiones. Los Rigidbody de los humanoides de ambos grupos son dinámicos, con `Is Kinematic` desactivado. También bloqueé las rotaciones de los ejes X y Z para evitar que los personajes volcaran al moverse.
 
 Por último, creé materiales para aplicar las texturas a los personajes y mantuve las animaciones originales incluidas en los prefabs, que se reproducen desde el componente Animator.
 
@@ -27,9 +27,9 @@ Por último, creé materiales para aplicar las texturas a los personajes y mantu
 
 En este ejercicio amplié la escena anterior añadiendo dos tipos de escudos y nuevas mecánicas de movimiento para los humanoides. Para ello, utilicé dos eventos diferentes que se activan cuando el jugador colisiona con un humanoide de tipo 1 o de tipo 2.
 
-Cuando colisiona con uno de tipo 2, los humanoides del grupo 1 se desplazan hacia un escudo seleccionado previamente mediante un Transform público. En cambio, cuando colisiona con uno de tipo 1, se dirigen hacia los escudos de tipo 2, seleccionando el más cercano mediante `Vector3.Distance`.
+Cuando colisiona con uno de tipo 2, los humanoides del grupo 1 se desplazan hacia un escudo seleccionado previamente mediante un Transform público. En cambio, cuando colisiona con uno de tipo 1, se dirigen hacia los escudos de tipo 2, seleccionando el más cercano mediante `Vector3.Distance`. Para desplazarlos utilicé `Rigidbody.AddForce`, aplicando una aceleración hacia el objetivo en cada actualización de física.
 
-También implementé que los humanoides cambien de color al colisionar con un escudo de tipo 2. Para ello tuve que acceder a los Renderer de los objetos hijos de los prefabs, ya que sus Meshes no estaban directamente en el objeto principal.
+Tanto los humanoides de los dos grupos como los escudos tienen Rigidbody no cinemáticos y Colliders, permitiendo que se produzcan colisiones físicas entre ellos. También implementé que los humanoides cambien de color al colisionar con un escudo de tipo 2, momento en el que dejan de recibir la fuerza de movimiento. Para cambiar el color tuve que acceder a los Renderer de los objetos hijos de los prefabs, ya que sus Meshes no estaban directamente en el objeto principal.
 
 ![Ejercicio 3](./gifs-readme/ejercicio3.gif)
 
@@ -71,10 +71,9 @@ Para implementarlo, creé el script `SeventhExerciseRewardUI`, que accede al com
 
 Además, añadí un segundo texto al Canvas para mostrar las recompensas acumuladas, manteniendo también el texto de puntuación del ejercicio anterior.
 
+Perdí la grabación original de este ejercicio, por lo que muestro su funcionamiento en el vídeo del ejercicio 8, donde se mantiene esta mecánica.
+
 ![Ejercicio 7](./gifs-readme/ejercicio8.gif)
-
-
-\(perdí el vídeo de este ejercicio sin tener la escena del ejercicio 8)
 
 ## Ejercicio 8
 
@@ -90,8 +89,8 @@ En esta escena mantuve los prefabs de humanoides de los distintos grupos y de lo
 
 En este último ejercicio adapté la mecánica del ejercicio 3 para que el jugador se comportara como un objeto físico, en lugar de utilizar un Rigidbody cinemático.
 
-Para ello, modifiqué la configuración del Rigidbody del prefab del jugador, desactivando `Is Kinematic` y activando la gravedad. También cambié el sistema de movimiento para utilizar `Rigidbody.linearVelocity` en lugar de `MovePosition`, conservando la velocidad vertical para permitir que la gravedad siguiera actuando.
+Para ello, modifiqué la configuración del Rigidbody del prefab del jugador, desactivando `Is Kinematic` y activando la gravedad. También cambié el sistema de movimiento para utilizar `Rigidbody.AddForce` con `ForceMode.Acceleration` en lugar de `MovePosition`. De esta forma, el jugador se desplaza mediante fuerzas físicas, acelerando progresivamente y conservando cierta inercia, mientras que la gravedad sigue actuando sobre él.
 
-He seguido usando los eventos y las colisiones del ejercicio 3, de forma que los humanoides siguen reaccionando dependiendo del grupo con el que colisiona el jugador y cambian de color al chocar contra los escudos físicos de tipo 2. También configuré las restricciones de rotación para evitar que el jugador volcara durante el movimiento.
+He seguido utilizando los eventos y las colisiones del ejercicio 3, manteniendo los Rigidbody dinámicos de los humanoides de tipo 1 y 2 y de los escudos. Así, los humanoides siguen reaccionando dependiendo del grupo con el que colisiona el jugador y cambian de color al chocar contra los escudos físicos de tipo 2. También configuré las restricciones de rotación para evitar que el jugador volcara durante el movimiento.
 
 ![Ejercicio 9](./gifs-readme/ejercicio9.gif)
