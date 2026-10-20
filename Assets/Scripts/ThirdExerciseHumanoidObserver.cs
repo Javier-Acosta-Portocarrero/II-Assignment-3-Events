@@ -1,19 +1,18 @@
+
 using UnityEngine;
 
 public class ThirdExerciseHumanoidObserver : MonoBehaviour
 {
     public string playerTag = "Player";
     public string type1Tag = "Type1";
-    public string shieldType1Tag = "ShieldType1";
     public string shieldType2Tag = "ShieldType2";
     public Transform selectedShield;
-    public float speed = 3f;
+    public float force = 15f;
 
     private Rigidbody rb;
     private ThirdExerciseCubeNotifier notifier;
     private Transform target;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -23,12 +22,6 @@ public class ThirdExerciseHumanoidObserver : MonoBehaviour
 
         notifier.OnType1Collision += MoveToType2Shield;
         notifier.OnType2Collision += MoveToSelectedShield;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     void MoveToSelectedShield()
@@ -65,9 +58,8 @@ public class ThirdExerciseHumanoidObserver : MonoBehaviour
 
         Vector3 direction = target.position - transform.position;
         direction.y = 0;
-        Vector3 movement = direction.normalized * speed;
 
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        rb.AddForce(direction.normalized * force, ForceMode.Acceleration);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -80,7 +72,6 @@ public class ThirdExerciseHumanoidObserver : MonoBehaviour
                 characterRenderer.material.color = Color.yellow;
             }
             target = null;
-            rb.AddForce(direction.normalized * force, ForceMode.Acceleration);
             //Debug.Log(gameObject.name + " changed color");
         }
     }
