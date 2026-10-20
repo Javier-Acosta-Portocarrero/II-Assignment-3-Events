@@ -1,3 +1,4 @@
+
 using UnityEngine;
 
 public class FirstExerciseSphereObserver : MonoBehaviour
@@ -6,14 +7,13 @@ public class FirstExerciseSphereObserver : MonoBehaviour
     public string type1Tag = "Type1";
     public string type2Tag = "Type2";
     public Transform greenSphere;
-    public float speed = 3f;
+    public float force = 10f;
     public float stoppingDistance = 3f;
 
     private Rigidbody rb;
     private FirstExerciseCylinderNotifier cylinder;
     private Transform target;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,19 +22,13 @@ public class FirstExerciseSphereObserver : MonoBehaviour
         cylinder.OnCubeCollision += MoveSphere;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void MoveSphere()
     {
-        if (CompareTag("Type1"))
+        if (CompareTag(type1Tag))
         {
             target = greenSphere;
         }
-        else if (CompareTag("Type2"))
+        else if (CompareTag(type2Tag))
         {
             target = cylinder.transform;
         }

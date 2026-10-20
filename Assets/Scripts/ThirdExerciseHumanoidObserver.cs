@@ -7,7 +7,7 @@ public class ThirdExerciseHumanoidObserver : MonoBehaviour
     public string type1Tag = "Type1";
     public string shieldType2Tag = "ShieldType2";
     public Transform selectedShield;
-    public float force = 15f;
+    public float force = 10f;
 
     private Rigidbody rb;
     private ThirdExerciseCubeNotifier notifier;

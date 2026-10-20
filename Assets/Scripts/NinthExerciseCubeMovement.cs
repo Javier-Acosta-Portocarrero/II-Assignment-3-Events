@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NinthExerciseCubeMovement : MonoBehaviour
 {
-    public float force = 15f;
+    public float force = 10f;
     private Rigidbody rb;
     private float horizontal;
     private float vertical;
