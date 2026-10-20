@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 147417810}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6948e672dfda62544ae9d878453a2c3b, type: 3}
   m_Name: 
@@ -1058,7 +1058,7 @@ MonoBehaviour:
   type1Tag: Type1
   type2Tag: Type2
   greenSphere: {fileID: 0}
-  speed: 3
+  force: 15
   stoppingDistance: 3
 --- !u!54 &147417814
 Rigidbody:
@@ -1124,10 +1124,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThirdExerciseHumanoidObserver
   playerTag: Player
   type1Tag: Type1
-  shieldType1Tag: ShieldType1
   shieldType2Tag: ShieldType2
   selectedShield: {fileID: 0}
-  speed: 3
+  force: 15
 --- !u!114 &147417817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1410,6 +1409,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 90
   m_CollisionDetection: 0
+--- !u!4 &198098598 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7556329489791505927, guid: 4a14df3a625a926419729a4931a13c5f, type: 3}
+  m_PrefabInstance: {fileID: 198098593}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &207843558 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100048, guid: 272ec112bddec644a8af6599107e74f7, type: 3}
@@ -1422,7 +1426,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 207843558}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6948e672dfda62544ae9d878453a2c3b, type: 3}
   m_Name: 
@@ -1431,7 +1435,7 @@ MonoBehaviour:
   type1Tag: Type1
   type2Tag: Type2
   greenSphere: {fileID: 910035050}
-  speed: 3
+  force: 15
   stoppingDistance: 3
 --- !u!54 &207843562
 Rigidbody:
@@ -1497,10 +1501,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThirdExerciseHumanoidObserver
   playerTag: Player
   type1Tag: Type1
-  shieldType1Tag: ShieldType1
   shieldType2Tag: ShieldType2
   selectedShield: {fileID: 779398589}
-  speed: 3
+  force: 10
 --- !u!114 &207843565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1795,7 +1798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 300587175}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6948e672dfda62544ae9d878453a2c3b, type: 3}
   m_Name: 
@@ -1804,7 +1807,7 @@ MonoBehaviour:
   type1Tag: Type1
   type2Tag: Type2
   greenSphere: {fileID: 910035050}
-  speed: 3
+  force: 15
   stoppingDistance: 3
 --- !u!54 &300587179
 Rigidbody:
@@ -1870,10 +1873,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThirdExerciseHumanoidObserver
   playerTag: Player
   type1Tag: Type1
-  shieldType1Tag: ShieldType1
   shieldType2Tag: ShieldType2
   selectedShield: {fileID: 779398589}
-  speed: 3
+  force: 10
 --- !u!114 &300587182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3611,7 +3613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52199e7f0a909d04eaa64d7886d6e573, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NinthExerciseCubeMovement
-  speed: 5
+  force: 10
 --- !u!1001 &575902671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5754,7 +5756,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910035048}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6948e672dfda62544ae9d878453a2c3b, type: 3}
   m_Name: 
@@ -5763,7 +5765,7 @@ MonoBehaviour:
   type1Tag: Type1
   type2Tag: Type2
   greenSphere: {fileID: 0}
-  speed: 3
+  force: 15
   stoppingDistance: 3
 --- !u!54 &910035052
 Rigidbody:
@@ -5829,10 +5831,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThirdExerciseHumanoidObserver
   playerTag: Player
   type1Tag: Type1
-  shieldType1Tag: ShieldType1
   shieldType2Tag: ShieldType2
   selectedShield: {fileID: 0}
-  speed: 3
+  force: 15
 --- !u!114 &910035055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10654,7 +10655,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1790711627}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6948e672dfda62544ae9d878453a2c3b, type: 3}
   m_Name: 
@@ -10663,7 +10664,7 @@ MonoBehaviour:
   type1Tag: Type1
   type2Tag: Type2
   greenSphere: {fileID: 910035050}
-  speed: 3
+  force: 15
   stoppingDistance: 3
 --- !u!54 &1790711631
 Rigidbody:
@@ -10729,10 +10730,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ThirdExerciseHumanoidObserver
   playerTag: Player
   type1Tag: Type1
-  shieldType1Tag: ShieldType1
   shieldType2Tag: ShieldType2
-  selectedShield: {fileID: 779398589}
-  speed: 3
+  selectedShield: {fileID: 198098598}
+  force: 10
 --- !u!114 &1790711634
 MonoBehaviour:
   m_ObjectHideFlags: 0
