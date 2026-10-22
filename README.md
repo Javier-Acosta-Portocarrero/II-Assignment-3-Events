@@ -59,7 +59,7 @@ En este ejercicio añadí una interfaz que permite visualizar la puntuación del
 
 Para ello, creé un Canvas con un componente Legacy Text y utilicé el script `SixthExerciseScoreUI` para actualizar su contenido. Este obtiene la puntuación almacenada en `FifthExerciseShieldCollector` mediante el método `GetScore`, mostrando el valor correspondiente en cada momento.
 
-También configuré el Rect Transform para situar el texto en la esquina superior izquierda, utilizando los Anchors y una posición de (120, -40). Finalmente, establecí un tamaño de fuente de 25 y un color verde claro para que la puntuación destacara sobre el escenario.
+También configuré el Rect Transform para situar el texto en la esquina superior izquierda. Finalmente, establecí un tamaño de fuente de 25 y un color verde claro para que la puntuación destacara sobre el escenario.
 
 ![Ejercicio 6](./gifs-readme/ejercicio6.gif)
 
